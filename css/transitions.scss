@@ -1,0 +1,59 @@
+/* --------------------------------------------------------------------------- transitions */
+
+.pos { transition-property: top, left; }
+
+#solar-system, .orbit, 
+.planet, 
+.satelite, 
+.ring { transition-property: width, height, top, left, margin-left, margin-top, webkit-transform; }
+
+#sun, .icon { transition-property: width, height, webkit-transform; }
+
+#solar-system, 
+#sun, 
+.orbit, 
+.pos, 
+.planet, 
+.satelite, 
+.ring,
+.infos,
+.icon { 
+  transition-duration: .8s;
+  transition-timing-function: ease-in-out;
+}
+
+#solar-system,
+#sun,
+.planet, 
+.satelite,
+.ring { transition-delay: 0s; }
+
+.pos { transition-delay: 1s; }
+
+.opening #solar-system, 
+.opening #sun, 
+.opening .orbit, 
+.opening .pos, 
+.opening .planet, 
+.opening .satelite, 
+.opening .ring,
+.opening .infos,
+.opening h1, 
+.opening #data,
+.opening dl.infos,
+.opening #controls { 
+  transition-duration: 0s;
+  transition-delay: 0s;
+}
+
+.opening .pos { transition-delay: 0s; }
+
+h1, #data, #controls { 
+  transition-property: opacity, margin;
+  transition-duration: .8s;
+  transition-timing-function: ease-in-out;
+}
+
+h1 { transition-delay: .35s; }
+#data { transition-delay: .7s; }
+#controls { transition-delay: 1s; }

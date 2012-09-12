@@ -1,0 +1,238 @@
+/* --------------------------------------------------------------------------- data */
+
+/* --------------------------------------------------------------------------- speed */
+
+/* sideral years */
+
+$speedRatio:                12s;
+
+$s-mercury:                 0.2408467;
+$s-venus:                   0.61519726;
+$s-earth:                   1.0000174;
+$s-moon:                    0.074803559;
+$s-mars:                    1.8808476;
+$s-jupiter:                 11.862615;
+$s-saturn:                  29.447498;
+$s-uranus:                  84.016846;
+$s-neptune:                 164.79132;
+
+@function sideralyear($sidyear) {
+  @return ($sidyear)*$speedRatio;
+}
+
+#mercury .pos, 
+#mercury .planet, 
+#mercury.orbit            { animation-duration: sideralyear($s-mercury); }
+
+#venus .pos, 
+#venus .planet, 
+#venus.orbit              { animation-duration: sideralyear($s-venus); }
+
+#earth .pos, 
+#earth .planet, 
+#earth.orbit              { animation-duration: sideralyear($s-earth); }
+
+#earth .orbit .pos,
+#earth .orbit /* Moon */  { animation-duration: sideralyear($s-moon); }
+
+#mars .pos, 
+#mars .planet, 
+#mars.orbit               { animation-duration: sideralyear($s-mars); }
+
+#jupiter .pos, 
+#jupiter .planet, 
+#jupiter.orbit            { animation-duration: sideralyear($s-jupiter); }
+
+#saturn .pos, 
+#saturn .planet, 
+#saturn.orbit,
+#saturn .ring             { animation-duration: sideralyear($s-saturn); }
+
+#uranus .pos, 
+#uranus .planet, 
+#uranus.orbit             { animation-duration: sideralyear($s-uranus); }
+
+#neptune .pos, 
+#neptune .planet, 
+#neptune.orbit            { animation-duration: sideralyear($s-neptune); }
+
+/* --------------------------------------------------------------------------- planets sizes */
+
+/* --------------------------------------------------------------------------- stretched sizes */
+
+.scale-stretched #sun                      { font-size: 24em; }
+.scale-stretched #mercury .planet          { font-size: 1.5em; }
+.scale-stretched #venus .planet            { font-size: 3.72em; }
+.scale-stretched #earth .planet            { font-size: 3.92em; }
+.scale-stretched #earth .moon              { font-size: 1.2em; }
+.scale-stretched #mars .planet             { font-size: 2.9em; }
+.scale-stretched #jupiter .planet          { font-size: 12em; }
+.scale-stretched #saturn .planet           { font-size: 10.8em; }
+.scale-stretched #uranus .planet           { font-size: 4.68em; }
+.scale-stretched #neptune .planet          { font-size: 4.9em; }
+
+/* --------------------------------------------------------------------------- scaled sizes */
+
+/*
+(planets radius * 2) * ratio
+*/
+
+@function ratio($data, $ratio) {
+  @return ($data * 2) * $ratio;
+}
+
+/*$distanceScaleRatio:   0.000075em;*/
+$distanceScaleRatio:    0.00003em;
+$sizeScaleRatio:         0.0003em;
+
+$r-sun:                    695508;
+$r-mercury:                  2439;
+$r-venus:                    6051;
+$r-earth:                    6371;
+$r-moon:                     1371;
+$r-mars:                     3389;
+$r-jupiter:                 69911;
+$r-saturn:                  58232;
+$r-uranus:                  25362;
+$r-neptune:                 24622;
+
+/* --------------------------------------------------------------------------- planets distance scale sizes */
+
+.scale-d #sun               { font-size: ratio($r-sun, $distanceScaleRatio); }
+.scale-d #mercury .planet   { font-size: ratio($r-mercury, $distanceScaleRatio); }
+.scale-d #venus .planet     { font-size: ratio($r-venus, $distanceScaleRatio); }
+.scale-d #earth .planet     { font-size: ratio($r-earth, $distanceScaleRatio); }
+.scale-d #earth .moon       { font-size: ratio($r-moon, $distanceScaleRatio); }
+.scale-d #mars .planet      { font-size: ratio($r-mars, $distanceScaleRatio); }
+.scale-d #jupiter .planet   { font-size: ratio($r-jupiter, $distanceScaleRatio); }
+.scale-d #saturn .planet    { font-size: ratio($r-saturn, $distanceScaleRatio); }
+.scale-d #uranus .planet    { font-size: ratio($r-uranus, $distanceScaleRatio); }
+.scale-d #neptune .planet   { font-size: ratio($r-neptune, $distanceScaleRatio); }
+
+/* --------------------------------------------------------------------------- planet size scale sizes */
+
+.scale-s #sun               { font-size: ratio($r-sun, $sizeScaleRatio); }
+.scale-s #mercury .planet   { font-size: ratio($r-mercury, $sizeScaleRatio); }
+.scale-s #venus .planet     { font-size: ratio($r-venus, $sizeScaleRatio); }
+.scale-s #earth .planet     { font-size: ratio($r-earth, $sizeScaleRatio); }
+.scale-s #earth .moon       { font-size: ratio($r-moon, $sizeScaleRatio); }
+.scale-s #mars .planet      { font-size: ratio($r-mars, $sizeScaleRatio); }
+.scale-s #jupiter .planet   { font-size: ratio($r-jupiter, $sizeScaleRatio); }
+.scale-s #saturn .planet    { font-size: ratio($r-saturn, $sizeScaleRatio); }
+.scale-s #uranus .planet    { font-size: ratio($r-uranus, $sizeScaleRatio); }
+.scale-s #neptune .planet   { font-size: ratio($r-neptune, $sizeScaleRatio); }
+
+/* --------------------------------------------------------------------------- stretched orbits */
+
+@mixin stretchedOrbit($distance) {
+  width: $distance;
+  height: $distance;
+  margin-top: -#{$distance/2};
+  margin-left: -#{$distance/2};
+}
+
+.scale-stretched #mercury.orbit            { @include stretchedOrbit(32em); }
+.scale-stretched #venus.orbit              { @include stretchedOrbit(40em); }
+.scale-stretched #earth.orbit              { @include stretchedOrbit(56em); }
+.scale-stretched #earth .orbit /* Moon */  { @include stretchedOrbit(6em); }
+.scale-stretched #mars.orbit               { @include stretchedOrbit(72em); }
+.scale-stretched #jupiter.orbit            { @include stretchedOrbit(100em); }
+.scale-stretched #saturn.orbit             { @include stretchedOrbit(150em); }
+.scale-stretched #uranus.orbit             { @include stretchedOrbit(186em); }
+.scale-stretched #neptune.orbit            { @include stretchedOrbit(210em); }
+
+/* --------------------------------------------------------------------------- scaled orbits */
+
+$orbitDistanceRatio: 0.000000013em;
+$orbitSizeRatio: 1em;
+
+$d-mercury:               57909227;
+$d-venus:                108209475;
+$d-earth:                149598262;
+$d-mars:                 227943824;
+$d-jupiter:              778340821;
+$d-saturn:              1426666422;
+$d-uranus:              2870658186;
+$d-neptune:             4498396441;
+
+@function orbitsize($distance, $planetSizeRatio, $orbitRatio) {
+  @return ratio($r-sun, $planetSizeRatio) + ( ratio($distance, $orbitRatio) * 2 );
+}
+
+@mixin scaledOrbit($distance, $planetSizeRatio, $orbitRatio) {
+  width: orbitsize($distance, $planetSizeRatio, $orbitRatio);
+  height: orbitsize($distance, $planetSizeRatio, $orbitRatio);
+  margin-top: -#{orbitsize($distance, $planetSizeRatio, $orbitRatio)/2};
+  margin-left: -#{orbitsize($distance, $planetSizeRatio, $orbitRatio)/2};
+}
+
+/* --------------------------------------------------------------------------- distance scale orbits */
+
+.scale-d #mercury.orbit   { @include scaledOrbit($d-mercury, $distanceScaleRatio, $orbitDistanceRatio); }
+.scale-d #venus.orbit     { @include scaledOrbit($d-venus, $distanceScaleRatio, $orbitDistanceRatio); }
+.scale-d #earth.orbit     { @include scaledOrbit($d-earth, $distanceScaleRatio, $orbitDistanceRatio); }
+.scale-d #mars.orbit      { @include scaledOrbit($d-mars, $distanceScaleRatio, $orbitDistanceRatio); }
+.scale-d #jupiter.orbit   { @include scaledOrbit($d-jupiter, $distanceScaleRatio, $orbitDistanceRatio); }
+.scale-d #saturn.orbit    { @include scaledOrbit($d-saturn, $distanceScaleRatio, $orbitDistanceRatio); }
+.scale-d #uranus.orbit    { @include scaledOrbit($d-uranus, $distanceScaleRatio, $orbitDistanceRatio); }
+.scale-d #neptune.orbit   { @include scaledOrbit($d-neptune, $distanceScaleRatio, $orbitDistanceRatio); }
+/* Moon */
+.scale-d #earth .orbit    { width: 1em; height: 1em; margin-top: -.5em; margin-left: -.5em; }
+
+/* --------------------------------------------------------------------------- size scale orbits */
+
+.scale-s #mercury.orbit   { @include scaledOrbit(6, $sizeScaleRatio, $orbitSizeRatio); }
+.scale-s #venus.orbit     { @include scaledOrbit(10, $sizeScaleRatio, $orbitSizeRatio); }
+.scale-s #earth.orbit     { @include scaledOrbit(14, $sizeScaleRatio, $orbitSizeRatio); }
+.scale-s #mars.orbit      { @include scaledOrbit(18, $sizeScaleRatio, $orbitSizeRatio); }
+.scale-s #jupiter.orbit   { @include scaledOrbit(36, $sizeScaleRatio, $orbitSizeRatio); }
+.scale-s #saturn.orbit    { @include scaledOrbit(72, $sizeScaleRatio, $orbitSizeRatio); }
+.scale-s #uranus.orbit    { @include scaledOrbit(100, $sizeScaleRatio, $orbitSizeRatio); }
+.scale-s #neptune.orbit   { @include scaledOrbit(116, $sizeScaleRatio, $orbitSizeRatio); }
+/* Moon */
+.scale-s #earth .orbit    { width: 1em; height: 1em; margin-top: -.5em; margin-left: -.5em; }
+
+/* --------------------------------------------------------------------------- text infos data */
+
+/* --------------------------------------------------------------------------- speed */
+
+.set-speed dl.infos dd span:after     { content: 'Orbit Velocity'; }
+
+.set-speed #sun dl.infos dd:after     { content: '0 km/h'; }
+.set-speed #mercury dl.infos dd:after { content: '170,503 km/h'; }
+.set-speed #venus dl.infos dd:after   { content: '126,074 km/h'; }
+.set-speed #earth dl.infos dd:after   { content: '107,218 km/h'; }
+.set-speed #mars dl.infos dd:after    { content: '86,677 km/h'; }
+.set-speed #jupiter dl.infos dd:after { content: '47,002 km/h'; }
+.set-speed #saturn dl.infos dd:after  { content: '34,701 km/h'; }
+.set-speed #uranus dl.infos dd:after  { content: '24,477 km/h'; }
+.set-speed #neptune dl.infos dd:after { content: '19,566 km/h'; }
+
+/* --------------------------------------------------------------------------- size */
+
+.set-size dl.infos dd span:after     { content: 'Equatorial Circumference'; }
+
+.set-size #sun dl.infos dd:after     { content: '4,370,005 km'; }
+.set-size #mercury dl.infos dd:after { content: '15,329 km'; }
+.set-size #venus dl.infos dd:after   { content: '38,024 km'; }
+.set-size #earth dl.infos dd:after   { content: '40,030 km'; }
+.set-size #mars dl.infos dd:after    { content: '21,296 km'; }
+.set-size #jupiter dl.infos dd:after { content: '439,263 km'; }
+.set-size #saturn dl.infos dd:after  { content: '365,882 km'; }
+.set-size #uranus dl.infos dd:after  { content: '159,354 km'; }
+.set-size #neptune dl.infos dd:after { content: '154,704 km'; }
+
+/* --------------------------------------------------------------------------- distance */
+
+.set-distance dl.infos dd span:after     { content: 'From Sun'; }
+.set-distance #sun dl.infos dd span:after{ content: 'From Earth'; }
+
+.set-distance #sun dl.infos dd:after     { content: '149,598,262 km'; }
+.set-distance #mercury dl.infos dd:after { content: '57,909,227 km'; }
+.set-distance #venus dl.infos dd:after   { content: '108,209,475 km'; }
+.set-distance #earth dl.infos dd:after   { content: '149,598,262 km'; }
+.set-distance #mars dl.infos dd:after    { content: '227,943,824 km'; }
+.set-distance #jupiter dl.infos dd:after { content: '778,340,821 km'; }
+.set-distance #saturn dl.infos dd:after  { content: '1,426,666,422 km'; }
+.set-distance #uranus dl.infos dd:after  { content: '2,870,658,186 km'; }
+.set-distance #neptune dl.infos dd:after { content: '4,498,396,441 km'; }

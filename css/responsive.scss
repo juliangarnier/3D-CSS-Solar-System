@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------------------- responsive styles */
+
+@media screen and (max-width: 299px) { #universe { font-size: 20%; } }
+
+@media screen and (min-width: 300px) { #universe { font-size: 24%; } }
+
+@media screen and (min-width: 500px) { #universe { font-size: 36%; } }
+
+@media screen and (min-width: 600px) { #universe { font-size: 44%; } }
+
+@media screen and (min-width: 760px) { #universe { font-size: 58%; } }
+
+@media screen and (min-width: 1000px) {
+
+  #universe { font-size: 73%; }
+
+  #navbar, #controls, #data { background: transparent; }
+
+  #navbar a { display: none; }
+
+  h1 { font-size: 22px; margin-top: 8px; }
+
+  #controls { padding-right: 32px; top: 12px; }
+
+  #data {
+    position: fixed;
+    top: inherit;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  #data a {
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px 15px;
+  }
+
+  .data-open #data, .data-close #data { left: 0px; }
+  .controls-open #controls, .controls-close #controls { right: 0px; }
+
+}
+
+@media screen and (min-width: 1300px) { #universe { font-size: 100%; } }

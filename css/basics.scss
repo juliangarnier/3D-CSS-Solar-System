@@ -1,0 +1,120 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+* { -moz-box-sizing: border-box; box-sizing: border-box; box-sizing: border-box; }
+
+body { 
+  font-size: 10px; 
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: 300; 
+  background-color: #08090A;
+}
+
+#universe {
+  z-index: 1;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#galaxy {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*perspective: 4000;*/
+}
+
+#solar-system {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  animation-name: orbit;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.orbit .orbit{ animation-name: suborbit; }
+
+.pos {
+  position: absolute;
+  top: 50%;
+  width: 2em;
+  height: 2em; 
+  margin-top: -1em;
+  margin-left: -1em;
+  transform-style: preserve-3d;
+  animation-name: invert;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#sun, .planet, #earth .moon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em; 
+  margin-top: -.5em;
+  margin-left: -.5em;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+#sun {
+  background-color: #FB7209;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 60px rgba(255, 160, 60, .4);
+}
+
+.planet {
+  background-color: #202020;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.ring{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+#saturn .ring {
+  width: 2em;
+  height: 2em;
+  margin-top: -1em;
+  margin-left: -1em;
+  border:.3em solid rgba(160,147,130,.7);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#saturn .ring:after {
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 2.2em;
+  height: 2.2em;
+  margin-top: -1.1em;
+  margin-left: -1.1em;
+  border: .07em solid rgba(160,147,130,.5);
+  box-sizing: border-box; box-sizing: border-box;
+}

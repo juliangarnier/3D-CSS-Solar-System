@@ -1,0 +1,92 @@
+/* --------------------------------------------------------------------------- navigation styles */
+
+dl.infos {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: -90%;
+  margin-left: 90%;
+  padding-left: 100%;
+  transform-origin: 100% 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg);
+}
+
+dl.infos:before {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 30px;
+  left: 15px;
+  bottom: 0;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  transform-style: preserve-3d;
+  transform: skew( -45deg , 0deg );
+  box-shadow: inset 1px 1px black;
+}
+
+dl.infos dt {
+  position: absolute;
+  left: 50px;
+  margin-bottom: 26px;
+  bottom: 30px;
+  color: #FFF;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px black;
+}
+
+dl.infos dd:after {
+  position: absolute;
+  left: 50px;
+  bottom: 30px;
+  width: 300px;
+  color: #FFF;
+  font-size: 22px;
+  text-shadow: 1px 1px 2px black;
+}
+
+dl.infos dd span:after {
+  position: absolute;
+  left: 50px;
+  bottom: 14px;
+  width: 300px;
+  color: #FFF;
+  font-size: 11px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.sun #sun .infos,
+.mercury #mercury .infos,
+.venus #venus .infos,
+.earth #earth .infos,
+.mars #mars .infos,
+.jupiter #jupiter .infos,
+.saturn #saturn .infos,
+.uranus #uranus .infos,
+.neptune #neptune .infos { 
+  display: block; 
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.mercury #mercury.orbit,
+.venus #venus.orbit,
+.earth #earth.orbit,
+.mars #mars.orbit,
+.jupiter #jupiter.orbit,
+.saturn #saturn.orbit,
+.uranus #uranus.orbit,
+.neptune #neptune.orbit {
+  border: 1px solid rgba(255,255,255,.8);
+}
+
+
+.hide-UI h1, 
+.hide-UI #data, 
+.hide-UI dl.infos, 
+.hide-UI #controls { opacity: 0!important; margin-top: -30px; }
+.hide-UI #data { margin-bottom: -30px; }
+.hide-UI .orbit { border: 1px solid rgba(255,255,255,.2)!important; }
