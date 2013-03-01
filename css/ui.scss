@@ -6,7 +6,7 @@ h1 {
   color: rgba(255,255,255,.8);
 }
 
-#navbar, #controls, #data { background: rgba(0,0,0,.4); }
+#navbar, #scale-controls, #data { background: rgba(0,0,0,.4); }
 
 #navbar {
   z-index: 99;
@@ -18,14 +18,14 @@ h1 {
   height: 48px;
 }
 
-#navbar a, #data a, #controls label {
+#navbar a, #data a, #scale-controls label {
   color: rgba(255,255,255,.6);
   display: block;
   position: relative;
   text-decoration: none;
 }
 
-#navbar a:hover, #data a:hover, #controls label:hover { color: #FFF; }
+#navbar a:hover, #data a:hover, #scale-controls label:hover { color: #FFF; }
 #data a.active { color: #0CF; }
 
 #navbar a {
@@ -39,7 +39,7 @@ h1 {
 #toggle-data { left: 0; }
 #toggle-controls { right: 0; }
 
-#data, #controls {
+#data, #scale-controls, #zoom-controls {
   z-index: 99;
   position: fixed;
   opacity: 1;
@@ -49,8 +49,8 @@ h1 {
 
 .data-close #data { left: -100%; }
 .data-open #data { left: 0px; }
-.controls-close #controls { right: -100%; }
-.controls-open #controls { right: 0px; }
+.controls-close #scale-controls { right: -100%; }
+.controls-open #scale-controls { right: 0px; }
 
 #data a {
   margin-bottom: 1px;
@@ -58,15 +58,15 @@ h1 {
   font-size: 18px;
 }
 
-#controls label {
+#scale-controls label {
   opacity: .6;
   height: 24px;
   margin-bottom: 28px;
 }
 
-#controls label:hover { opacity: 1; }
+#scale-controls label:hover { opacity: 1; }
 
-#controls label:before {
+#scale-controls label:before {
   position: absolute;
   display: block;
   width: 20px;
@@ -77,7 +77,7 @@ h1 {
   z-index: 99;
 }
 
-#controls label span {
+#scale-controls label span {
   display: block;
   margin-left: 36px;
   padding-top: 4px;
@@ -85,12 +85,12 @@ h1 {
   color: #FFF;
 }
 
-#controls input {
+#scale-controls input {
   display: block;
   appearance: none;
 }
 
-#controls input[type="radio"]:before {
+#scale-controls input[type="radio"]:before {
   content: '';
   display: block;
   position: absolute;
@@ -100,7 +100,7 @@ h1 {
   border-radius: 16px;
 }
 
-#controls input:checked[type="radio"]:after {
+#scale-controls input:checked[type="radio"]:after {
   content: '';
   display: block;
   top: 3px;
@@ -113,7 +113,7 @@ h1 {
   z-index: 99;
 }
 
-#controls input[type="checkbox"]:before {
+#scale-controls input[type="checkbox"]:before {
   content: '';
   display: block;
   position: absolute;
@@ -123,7 +123,7 @@ h1 {
   border-radius: 16px;
 }
 
-#controls input[type="checkbox"]:after {
+#scale-controls input[type="checkbox"]:after {
   content: '';
   display: block;
   top: 3px;
@@ -135,16 +135,45 @@ h1 {
   z-index: 99;
 }
 
-#controls label.set-view:before { font: bold small-caps 11px/20px sans-serif; }
+#scale-controls label.set-view:before { font: bold small-caps 11px/20px sans-serif; }
 
-.view-3D #controls label.set-view:before { content: '2D'; margin-left: 82px; }
-.view-2D #controls label.set-view:before { content: '3D'; margin-left: 7px; }
-.view-3D #controls .set-view input:after { margin-left: 3px; }
-.view-2D #controls .set-view input:after { margin-left: 81px; }
+.view-3D #scale-controls label.set-view:before { content: '2D'; margin-left: 82px; }
+.view-2D #scale-controls label.set-view:before { content: '3D'; margin-left: 7px; }
+.view-3D #scale-controls .set-view input:after { margin-left: 3px; }
+.view-2D #scale-controls .set-view input:after { margin-left: 81px; }
 
-#controls label.set-zoom:before { font: normal small-caps 18px/14px sans-serif; }
+#scale-controls label.set-zoom:before { font: normal small-caps 18px/14px sans-serif; }
 
-.zoom-large #controls label.set-zoom:before { content: '+'; margin-left: 82px; }
-.zoom-close #controls label.set-zoom:before { content: '-'; margin-left: 7px; }
-.zoom-large #controls .set-zoom input:after { margin-left: 3px; }
-.zoom-close #controls .set-zoom input:after { margin-left: 81px; }
+.zoom-large #scale-controls label.set-zoom:before { content: '+'; margin-left: 82px; }
+.zoom-close #scale-controls label.set-zoom:before { content: '-'; margin-left: 7px; }
+.zoom-large #scale-controls .set-zoom input:after { margin-left: 3px; }
+.zoom-close #scale-controls .set-zoom input:after { margin-left: 81px; }
+
+.slider {
+  display: block;
+  width: 2px; 
+  height: 200px;
+  background: white;
+  border-radius: 1px;
+}
+
+input[type="range"] {
+  appearance: slider-vertical;
+  width: 20px; 
+  height: 200px;
+}
+
+input::-webkit-slider-thumb {
+  appearance:none; 
+}
+
+input::-webkit-slider-thumb:after {
+  content: '';
+  display: block;
+  width:20px; 
+  height:20px;
+  margin-top: -2px;
+  margin-left: -14;
+  border-radius:10px;
+  background: white;
+}

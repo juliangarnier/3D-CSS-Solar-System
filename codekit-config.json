@@ -1,6 +1,6 @@
 {
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
-  "creatorBuild" : "7978",
+  "creatorBuild" : "8248",
   "files" : {
     "\/js\/jquery.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -13,17 +13,14 @@
       "outputAbbreviatedPath" : "\/js\/jquery.min.min.js",
       "fileType" : 64
     },
-    "\/css\/responsive.scss" : {
+    "\/css\/styles.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/responsive.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/responsive.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/css\/styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/img\/p-mercury.png" : {
       "ignoreWasSetByUser" : 0,
@@ -69,17 +66,6 @@
       "outputAbbreviatedPath" : "\/js\/scripts.min.js",
       "fileType" : 64
     },
-    "\/img\/p-mars.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/p-mars.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/p-mars.png",
-      "initialSize" : 636,
-      "fileType" : 8192
-    },
     "\/css\/images.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -91,6 +77,17 @@
       "outputAbbreviatedPath" : "\/css\/images.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/img\/p-neptune.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/p-neptune.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/p-neptune.png",
+      "initialSize" : 1195,
+      "fileType" : 8192
     },
     "\/css\/styles.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -115,15 +112,15 @@
       "initialSize" : 2401,
       "fileType" : 8192
     },
-    "\/img\/p-neptune.png" : {
+    "\/img\/p-mars.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/p-neptune.png",
+      "inputAbbreviatedPath" : "\/img\/p-mars.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/p-neptune.png",
-      "initialSize" : 1195,
+      "outputAbbreviatedPath" : "\/img\/p-mars.png",
+      "initialSize" : 636,
       "fileType" : 8192
     },
     "\/css\/basics.scss" : {
@@ -149,6 +146,18 @@
       "initialSize" : 730,
       "fileType" : 8192
     },
+    "\/css\/data.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/data.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/data.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/css\/transitions.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -161,28 +170,16 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/scripts.min.js" : {
+    "\/img\/fw-mockup.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/scripts.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/scripts.min.min.js",
-      "fileType" : 64
-    },
-    "\/css\/data.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/data.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/data.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/img\/fw-mockup.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/fw-mockup.png",
+      "initialSize" : 273960,
+      "fileType" : 8192
     },
     "\/img\/sun.png" : {
       "ignoreWasSetByUser" : 0,
@@ -207,16 +204,16 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/img\/p-uranus.png" : {
+    "\/js\/scripts.min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/p-uranus.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/p-uranus.png",
-      "initialSize" : 1562,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/js\/scripts.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/scripts.min.min.js",
+      "fileType" : 64
     },
     "\/img\/p-venus.png" : {
       "ignoreWasSetByUser" : 0,
@@ -228,18 +225,6 @@
       "outputAbbreviatedPath" : "\/img\/p-venus.png",
       "initialSize" : 698,
       "fileType" : 8192
-    },
-    "\/css\/lighting.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/lighting.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/lighting.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/index.html" : {
       "ignoreWasSetByUser" : 0,
@@ -260,6 +245,18 @@
       "outputAbbreviatedPath" : "\/img\/p-jupiter.png",
       "initialSize" : 3450,
       "fileType" : 8192
+    },
+    "\/css\/lighting.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/lighting.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/lighting.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/css\/views.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -285,16 +282,28 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/img\/fw-mockup.png" : {
+    "\/img\/p-uranus.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/fw-mockup.png",
+      "inputAbbreviatedPath" : "\/img\/p-uranus.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/fw-mockup.png",
-      "initialSize" : 273960,
+      "outputAbbreviatedPath" : "\/img\/p-uranus.png",
+      "initialSize" : 1562,
       "fileType" : 8192
+    },
+    "\/css\/responsive.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/responsive.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/responsive.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/img\/bg-stars.png" : {
       "ignoreWasSetByUser" : 0,
@@ -306,15 +315,6 @@
       "outputAbbreviatedPath" : "\/img\/bg-stars.png",
       "initialSize" : 32124,
       "fileType" : 8192
-    },
-    "\/css\/styles.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/styles.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     }
   },
   "manualImportLinks" : [
@@ -322,6 +322,7 @@
   ],
   "projectSettings" : {
     "hamlNoEscapeInAttributes" : 0,
+    "kitAutoOutputPathStyle" : 0,
     "lessOutputStyle" : 0,
     "hamlAutoOutputPathReplace2" : "",
     "draggedImportConcatenationStyle" : 1,
@@ -353,6 +354,7 @@
     "hamlOutputStyle" : 0,
     "stylusAutoOutputPathRelativePath" : "..\/css",
     "jsCheckerIndent" : 2,
+    "kitAutoOutputPathRelativePath" : "",
     "lessAutoOutputPathReplace2" : "css",
     "jadeAutoOutputPathReplace2" : "",
     "shouldRunBless" : 0,
@@ -377,7 +379,10 @@
     "coffeeAutoOutputPathReplace1" : "",
     "hamlUseDoubleQuotes" : 0,
     "coffeeAutoOutputPathReplace2" : "",
+    "kitAutoOutputPathReplace1" : "",
     "uglifyReservedNamesString" : "",
+    "coffeeOutputStyle" : 0,
+    "slimAutoOutputPathRelativePath" : "",
     "jsHintFlags" : {
       "latedef" : 1,
       "newcap" : 1,
@@ -436,8 +441,6 @@
       "laxbreak" : 0,
       "plusplus" : 0
     },
-    "coffeeOutputStyle" : 0,
-    "slimAutoOutputPathRelativePath" : "",
     "jsLintFlags" : {
       "white" : 0,
       "bitwise" : 0,
@@ -463,7 +466,6 @@
       "confusion" : 0,
       "evil" : 0,
       "on" : 0,
-      "cap" : 0,
       "windows" : 0,
       "devel" : 0,
       "rhino" : 0,
@@ -489,6 +491,7 @@
     "slimAutoOutputPathReplace2" : "",
     "jadeCompileDebug" : 1,
     "slimRailsCompatible" : 0,
+    "kitAutoOutputPathReplace2" : "",
     "lessDebugStyle" : 0,
     "javascriptAutoOutputPathRelativePath" : "",
     "slimAutoOutputPathStyle" : 0
