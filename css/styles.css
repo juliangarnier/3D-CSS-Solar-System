@@ -30,21 +30,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-* {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+*, *:before, *:after {
   box-sizing: border-box; }
 
 body {
   font-size: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   background-color: #08090A; }
 
 #universe {
   z-index: 1;
   position: absolute;
-  overflow: hidden;
+  overflow: auto;
   width: 100%;
   height: 100%;
   background-position: center 40%;
@@ -53,8 +51,8 @@ body {
 
 #galaxy {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
   /*perspective: 4000;*/ }
 
 #solar-system {
@@ -95,8 +93,8 @@ body {
   left: 50%;
   width: 1em;
   height: 1em;
-  margin-top: -0.5em;
-  margin-left: -0.5em;
+  margin-top: -.5em;
+  margin-left: -.5em;
   border-radius: 50%;
   transform-style: preserve-3d; }
 
@@ -269,20 +267,11 @@ body {
   width: 200%;
   font-size: 100%; }
 
-.zoom-close .scale-stretched #solar-system {
-  margin-left: -100%; }
-
-.zoom-close .scale-d #solar-system {
-  margin-left: -106%; }
-
 .zoom-close.view-2D .scale-d #solar-system {
   font-size: 84%; }
 
 .zoom-close.view-3D .scale-d #solar-system {
   font-size: 84%; }
-
-.zoom-close .scale-s #solar-system {
-  margin-left: -145%; }
 
 .zoom-close.view-2D .scale-s #solar-system {
   font-size: 40%; }
@@ -569,8 +558,8 @@ body {
 .scale-d #earth .orbit {
   width: 1em;
   height: 1em;
-  margin-top: -0.5em;
-  margin-left: -0.5em; }
+  margin-top: -.5em;
+  margin-left: -.5em; }
 
 /* --------------------------------------------------------------------------- size scale orbits */
 .scale-s #mercury.orbit {
@@ -625,8 +614,8 @@ body {
 .scale-s #earth .orbit {
   width: 1em;
   height: 1em;
-  margin-top: -0.5em;
-  margin-left: -0.5em; }
+  margin-top: -.5em;
+  margin-left: -.5em; }
 
 /* --------------------------------------------------------------------------- text infos data */
 /* --------------------------------------------------------------------------- speed */
@@ -1157,7 +1146,7 @@ h1 {
   text-align: center;
   color: rgba(255, 255, 255, 0.8); }
 
-#navbar, #controls, #data {
+#navbar, #scale-controls, #data {
   background: rgba(0, 0, 0, 0.4); }
 
 #navbar {
@@ -1169,13 +1158,13 @@ h1 {
   width: 100%;
   height: 48px; }
 
-#navbar a, #data a, #controls label {
+#navbar a, #data a, #scale-controls label {
   color: rgba(255, 255, 255, 0.6);
   display: block;
   position: relative;
   text-decoration: none; }
 
-#navbar a:hover, #data a:hover, #controls label:hover {
+#navbar a:hover, #data a:hover, #scale-controls label:hover {
   color: #FFF; }
 
 #data a.active {
@@ -1194,7 +1183,7 @@ h1 {
 #toggle-controls {
   right: 0; }
 
-#data, #controls {
+#data, #scale-controls, #zoom-controls {
   z-index: 99;
   position: fixed;
   opacity: 1;
@@ -1207,10 +1196,10 @@ h1 {
 .data-open #data {
   left: 0px; }
 
-.controls-close #controls {
+.controls-close #scale-controls {
   right: -100%; }
 
-.controls-open #controls {
+.controls-open #scale-controls {
   right: 0px; }
 
 #data a {
@@ -1218,15 +1207,15 @@ h1 {
   padding: 6px 10px;
   font-size: 18px; }
 
-#controls label {
+#scale-controls label {
   opacity: .6;
   height: 24px;
   margin-bottom: 28px; }
 
-#controls label:hover {
+#scale-controls label:hover {
   opacity: 1; }
 
-#controls label:before {
+#scale-controls label:before {
   position: absolute;
   display: block;
   width: 20px;
@@ -1236,27 +1225,27 @@ h1 {
   color: #FFF;
   z-index: 99; }
 
-#controls label span {
+#scale-controls label span {
   display: block;
   margin-left: 36px;
   padding-top: 4px;
   font-size: 18px;
   color: #FFF; }
 
-#controls input {
+#scale-controls input {
   display: block;
   appearance: none; }
 
-#controls input[type="radio"]:before {
+#scale-controls input[type="radio"]:before {
   content: '';
   display: block;
   position: absolute;
   width: 22px;
   height: 22px;
-  border: 2px solid #FFF;
+  border: 2px solid white;
   border-radius: 16px; }
 
-#controls input:checked[type="radio"]:after {
+#scale-controls input:checked[type="radio"]:after {
   content: '';
   display: block;
   top: 3px;
@@ -1268,16 +1257,16 @@ h1 {
   background: #FFF;
   z-index: 99; }
 
-#controls input[type="checkbox"]:before {
+#scale-controls input[type="checkbox"]:before {
   content: '';
   display: block;
   position: absolute;
   width: 100px;
   height: 22px;
-  border: 2px solid #FFF;
+  border: 2px solid white;
   border-radius: 16px; }
 
-#controls input[type="checkbox"]:after {
+#scale-controls input[type="checkbox"]:after {
   content: '';
   display: block;
   top: 3px;
@@ -1288,39 +1277,64 @@ h1 {
   background: #FFF;
   z-index: 99; }
 
-#controls label.set-view:before {
+#scale-controls label.set-view:before {
   font: bold small-caps 11px/20px sans-serif; }
 
-.view-3D #controls label.set-view:before {
+.view-3D #scale-controls label.set-view:before {
   content: '2D';
   margin-left: 82px; }
 
-.view-2D #controls label.set-view:before {
+.view-2D #scale-controls label.set-view:before {
   content: '3D';
   margin-left: 7px; }
 
-.view-3D #controls .set-view input:after {
+.view-3D #scale-controls .set-view input:after {
   margin-left: 3px; }
 
-.view-2D #controls .set-view input:after {
+.view-2D #scale-controls .set-view input:after {
   margin-left: 81px; }
 
-#controls label.set-zoom:before {
+#scale-controls label.set-zoom:before {
   font: normal small-caps 18px/14px sans-serif; }
 
-.zoom-large #controls label.set-zoom:before {
+.zoom-large #scale-controls label.set-zoom:before {
   content: '+';
   margin-left: 82px; }
 
-.zoom-close #controls label.set-zoom:before {
+.zoom-close #scale-controls label.set-zoom:before {
   content: '-';
   margin-left: 7px; }
 
-.zoom-large #controls .set-zoom input:after {
+.zoom-large #scale-controls .set-zoom input:after {
   margin-left: 3px; }
 
-.zoom-close #controls .set-zoom input:after {
+.zoom-close #scale-controls .set-zoom input:after {
   margin-left: 81px; }
+
+.slider {
+  display: block;
+  width: 2px;
+  height: 200px;
+  background: white;
+  border-radius: 1px; }
+
+input[type="range"] {
+  appearance: slider-vertical;
+  width: 20px;
+  height: 200px; }
+
+input::-webkit-slider-thumb {
+  appearance: none; }
+
+input::-webkit-slider-thumb:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: -2px;
+  margin-left: -14;
+  border-radius: 10px;
+  background: white; }
 
 /* --------------------------------------------------------------------------- transitions */
 .pos {
@@ -1335,7 +1349,10 @@ h1 {
 #sun, .icon {
   transition-property: width, height, webkit-transform; }
 
-#solar-system,
+#solar-system {
+  transition-duration: .2s;
+  transition-timing-function: ease-out; }
+
 #sun,
 .orbit,
 .pos,
@@ -1446,7 +1463,7 @@ body {
   #universe {
     font-size: 73%; }
 
-  #navbar, #controls, #data {
+  #navbar, #scale-controls, #data {
     background: transparent; }
 
   #navbar a {
@@ -1456,7 +1473,7 @@ body {
     font-size: 22px;
     margin-top: 8px; }
 
-  #controls {
+  #scale-controls {
     padding-right: 32px;
     top: 12px; }
 
@@ -1476,7 +1493,7 @@ body {
   .data-open #data, .data-close #data {
     left: 0px; }
 
-  .controls-open #controls, .controls-close #controls {
+  .controls-open #scale-controls, .controls-close #scale-controls {
     right: 0px; } }
 @media screen and (min-width: 1300px) {
   #universe {

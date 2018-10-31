@@ -9,7 +9,11 @@
 
 #sun, .icon { transition-property: width, height, webkit-transform; }
 
-#solar-system, 
+#solar-system { 
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
+}
+
 #sun, 
 .orbit, 
 .pos, 

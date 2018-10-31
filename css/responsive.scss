@@ -14,13 +14,13 @@
 
   #universe { font-size: 73%; }
 
-  #navbar, #controls, #data { background: transparent; }
+  #navbar, #scale-controls, #data { background: transparent; }
 
   #navbar a { display: none; }
 
   h1 { font-size: 22px; margin-top: 8px; }
 
-  #controls { padding-right: 32px; top: 12px; }
+  #scale-controls { padding-right: 32px; top: 12px; }
 
   #data {
     position: fixed;
@@ -38,7 +38,7 @@
   }
 
   .data-open #data, .data-close #data { left: 0px; }
-  .controls-open #controls, .controls-close #controls { right: 0px; }
+  .controls-open #scale-controls, .controls-close #scale-controls { right: 0px; }
 
 }
 
